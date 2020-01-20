@@ -4,7 +4,7 @@ A sample Gradle project to run TestNG tests with different command line args
 
 ### Usage
 
-#####Look into testsetup.gradle file custom tasks for more info.
+##### Look into testsetup.gradle file custom tasks for more info.
   
 - a. Using gradle java exec plugin 
    ```

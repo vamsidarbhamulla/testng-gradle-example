@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Test Suite" parallel="true">
+    <test name="Repo Regression Tests">
+        <classes>
+            <class name="com.features.demo.FeatureATest"/>
+            <class name="com.features.demo.FeatureBTest">
+                <methods>
+                    <exclude name="testB3"/>
+                </methods>
+            </class>
+            <class name="com.features.demo3.FeatureGTest"/>
+            <class name="com.features.FeatureETest"/>
+        </classes>
+    </test>
+    <test name="Regression Tests">
+        <classes>
+            <class name="com.features.demo.FeatureCTest"/>
+            <class name="com.features.demo2.FeatureDTest"/>
+            <class name="com.features.FeatureFTest">
+                <methods>
+                    <include name="testF3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

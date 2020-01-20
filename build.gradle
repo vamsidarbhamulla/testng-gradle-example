@@ -1,0 +1,44 @@
+group 'com.bodhivruksha'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+//Here you can specify the IDE that you will use and it will create tasks associated with it.
+apply plugin: 'idea'
+apply from: "testsetup.gradle"
+
+targetCompatibility = JavaVersion.VERSION_13
+sourceCompatibility = JavaVersion.VERSION_13
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main.java.srcDirs = ['src/main/java']
+    main.resources.srcDirs = ['src/main/resources']
+    test.java.srcDirs = ['src/test/java']
+    test.resources.srcDirs = ['src/test/resources']
+}
+
+ext {
+    testNgVersion = "7.1.0"
+}
+
+dependencies {
+    implementation fileTree('lib')
+    testImplementation fileTree('lib')
+    implementation group: 'org.testng', name: 'testng', version: "$testNgVersion"
+}
+
+//task to print sourceSets
+task printSourceSets {
+    doLast {
+        sourceSets.each {
+            println(it)
+            it.allSource.each {
+                println(it)
+            }
+        }
+    }
+}
+

@@ -1,0 +1,13 @@
+.DS_Store
+.gradle
+.idea
+*.iml
+*.class
+*.log
+*.log.*
+out/
+build/
+target/
+test-output
+test-results
+gradle/*.jar

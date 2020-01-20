@@ -5,12 +5,7 @@ A sample Gradle project to run TestNG tests with different command line args
 ### Usage
 
 ##### Look into testsetup.gradle file custom tasks for more info.
-  
-- a. Using gradle java exec plugin 
-   ```
-   ./gradlew -PmainClass=com.ritchiebros.k8s.KubernetesClusterCheck clean execute
-   ```
-- b. Using gradle testExec custom task built on java exec plugin as a custom wrapper to TestNG cli options. 
+- a. Using gradle testExec custom task built on java exec plugin as a custom wrapper to TestNG cli options. 
    ```
    ./gradlew clean testExec
    ./gradlew clean testExec -Pgroups=main # run tests from src/main/java folder
@@ -46,11 +41,11 @@ A sample Gradle project to run TestNG tests with different command line args
    # run tests from listed xml classes with only specified parallel tests collection with specified thread count
    ./gradlew clean testExec -Psuites=regression.xml -Pthreads=2 -Pparallel=tests   
    ```
-- c. Using testRun custom task built on gradle test plugin as a custom wrapper to run testNG tests
+- b. Using testRun custom task built on gradle test plugin as a custom wrapper to run testNG tests
    ```
    ./gradlew clean testRun --tests com.features.demo.FeatureCTest
    ```
-- d. Using testGroups custom task built on gradle test plugin as a custom wrapper to run testNG groups based tests
+- c. Using testGroups custom task built on gradle test plugin as a custom wrapper to run testNG groups based tests
    ```
    ./gradlew testGroups -Pgroups=main
    ./gradlew testGroups -Pgroups=main,unit,int
